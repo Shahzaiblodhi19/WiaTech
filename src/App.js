@@ -1,14 +1,12 @@
 import React, { useEffect, useState } from "react"; // Import React and hooks
-import { PieChart } from 'react-minimal-pie-chart'; // Import PieChart component
 import { buildStyles, CircularProgressbar } from 'react-circular-progressbar'; // Import CircularProgressbar and styles
 import 'react-circular-progressbar/dist/styles.css'; // Import styles for CircularProgressbar
 import "./App.css"; // Import custom styles
 import Slider from "react-slick"; // Import Slider component
 import "slick-carousel/slick/slick.css"; // Import slick carousel styles
 import "slick-carousel/slick/slick-theme.css"; // Import slick carousel theme styles
-import { FaAngleLeft, FaAngleRight, FaArrowAltCircleUp, FaArrowRight, FaStar } from "react-icons/fa"; // Import icons
+import { FaAngleLeft, FaAngleRight, FaCheck, FaStar } from "react-icons/fa"; // Import icons
 import { IoIosArrowRoundForward } from "react-icons/io";
-
 // Define slides data
 const slides = [
   {
@@ -83,6 +81,48 @@ const teamMembers = [
   },
 ];
 
+const testimonials = [
+  {
+    name: "Kevin G. Harrison",
+    title: "CEO & Founder",
+    text:
+      "With a proven track record delivering result we pride ourselves on delivering cost effective calable reliable solution that not only meet your current needs but also position your business",
+    image: "https://via.placeholder.com/150", // Replace with actual images
+  },
+  {
+    name: "Kevin G. Harrison",
+    title: "CEO & Founder",
+    text:
+      "With a proven track record delivering result we pride ourselves on delivering cost effective calable reliable solution that not only meet your current needs but also position your business",
+    image: "https://via.placeholder.com/150", // Replace with actual images
+  },
+  {
+    name: "Michael J. Heath",
+    title: "Web Designer",
+    text:
+      "With a proven track record delivering result we pride ourselves on delivering cost effective calable reliable solution that not only meet your current needs but also position your business",
+    image: "https://via.placeholder.com/150", // Replace with actual images
+  },
+  // Add more testimonials as needed
+];
+
+
+const TestimonialCard = ({ testimonial }) => {
+  return (
+    <div className="testimonial-card">
+      <img
+        src={testimonial.image}
+        alt={testimonial.name}
+        className="testimonial-img"
+      />
+      <h4>{testimonial.name}</h4>
+      <p>{testimonial.position}</p>
+      <p>{testimonial.description}</p>
+    </div>
+  );
+};
+
+
 // Define Home01Slider component
 const Home01Slider = () => {
   const [currentSlide, setCurrentSlide] = useState(0); // State for current slide index
@@ -148,15 +188,90 @@ const Home01Slider = () => {
 
   // Carousel settings for React Slick
   const settings2 = {
-    dots: true,
+    dots: false,
     infinite: true,
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
     beforeChange: (current, next) => setCurrentIndex(next),
     autoplay: true,
-    autoplaySpeed: 5000, // Auto-slide every 5 seconds
+    autoplaySpeed: 3000, // Auto-slide every 5 seconds
   };
+
+  const testimonials = [
+    {
+      name: "Kevin G. Harrison",
+      icon: 'https://themesflat.com/wiatechkit/wp-content/uploads/2024/02/logo2.png',
+      position: "CEO & Founder",
+      description: "With a proven track record delivering results, we pride ourselves on delivering cost-effective, scalable, and reliable solutions that meet your current needs while positioning your business for future growth.",
+      image: "https://themesflat.com/wiatechkit/wp-content/uploads/2024/02/user5-B4R2ENS.jpg",
+    },
+    {
+      name: "John Doe",
+      position: "Marketing Head",
+      icon: 'https://themesflat.com/wiatechkit/wp-content/uploads/2024/02/logo1.png',
+      description: "With a proven track record delivering results, we pride ourselves on delivering cost-effective, scalable, and reliable solutions that meet your current needs while positioning your business for future growth.",
+      image: "https://themesflat.com/wiatechkit/wp-content/uploads/2024/02/user5-B4R2ENS.jpg",
+    },
+    {
+      name: "Jane Smith",
+      icon: 'https://themesflat.com/wiatechkit/wp-content/uploads/2024/02/logo3.png',
+      position: "Project Manager",
+      description: "With a proven track record delivering results, we pride ourselves on delivering cost-effective, scalable, and reliable solutions that meet your current needs while positioning your business for future growth.",
+      image: "https://themesflat.com/wiatechkit/wp-content/uploads/2024/02/user5-B4R2ENS.jpg",
+    },
+    {
+      name: "Alice Johnson",
+      position: "HR Manager",
+      icon: 'https://themesflat.com/wiatechkit/wp-content/uploads/2024/02/logo1.png',
+      description: "With a proven track record delivering results, we pride ourselves on delivering cost-effective, scalable, and reliable solutions that meet your current needs while positioning your business for future growth.",
+      image: "https://themesflat.com/wiatechkit/wp-content/uploads/2024/02/user5-B4R2ENS.jpg",
+    },
+    // Add more testimonials as needed
+  ];
+  const settings3 = {
+    infinite: true,  // Infinite scroll
+    speed: 500,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    responsive: [
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 1, // Show 1 slide on smaller screens
+        },
+      },
+    ],
+  };
+
+  const blogs = [
+    {
+      date: "February 26, 2024",
+      title: "IT Service Case Studies Accelerating Business Fly Success Tech",
+      image: "https://themesflat.com/wiatechkit/wp-content/uploads/2024/02/Image-1-2.jpg",
+      link: "#",
+    },
+    {
+      date: "February 26, 2024",
+      title: "IT Service Case Studies Accelerating Business Fly Success Tech",
+      image: "https://themesflat.com/wiatechkit/wp-content/uploads/2024/02/Image-2-2.jpg",
+      link: "#",
+    },
+    {
+      date: "February 26, 2024",
+      title: "IT Service Case Studies Accelerating Business Fly Success Tech",
+      image: "https://themesflat.com/wiatechkit/wp-content/uploads/2024/02/Image-3-1.jpg",
+      link: "#",
+    },
+    {
+      date: "February 26, 2024",
+      title: "IT Service Case Accelerating to Business Fly Success Tech",
+      image: "https://themesflat.com/wiatechkit/wp-content/uploads/2024/02/Image-7.jpg",
+      link: "#",
+      featured: true,
+    },
+  ];
+
 
   return (
     <>
@@ -661,6 +776,319 @@ const Home01Slider = () => {
           {/* Icon Box Section */}
 
         </div>
+      </div>
+
+      <div className="section9">
+        <div className="container">
+          {/* Background Section */}
+          <div className="background-section">
+            <div className="text-container">
+              <h1 className="heading">What We Provide</h1>
+              <h3 className="subheading">We Run all kinds of IT services <br /> that vow your success</h3>
+            </div>
+
+            {/* Icon Boxes Section */}
+            <div className="icon-boxes-container">
+              {/* IT Consultancy Box */}
+              <div className="icon-box">
+                <div className="icon-box-inner">
+                  <div className="icon">
+                    <img
+                      src="https://themesflat.com/wiatechkit/wp-content/uploads/2024/02/technical-support-1.png"
+                      alt="IT Consultancy"
+                      className="icon-img"
+                    />
+                  </div>
+                  <h4 className="icon-title">IT Consultancy</h4>
+                  <div className="tick-icon">
+                    <FaCheck />
+                  </div>
+                </div>
+              </div>
+
+              {/* Software Development Box */}
+              <div className="icon-box active-icon-box">
+                <div className="icon-box-inner">
+                  <div className="icon">
+                    <img
+                      src="https://themesflat.com/wiatechkit/wp-content/uploads/2024/02/layers-1.png"
+                      alt="Software Development"
+                      className="icon-img"
+                    />
+                  </div>
+                  <h4 className="icon-title">Software Development</h4>
+                  <div className="tick-icon">
+                    <FaCheck />
+                  </div>
+                </div>
+              </div>
+
+              {/* Data Service Box */}
+              <div className="icon-box">
+                <div className="icon-box-inner">
+                  <div className="icon">
+                    <img
+                      src="https://themesflat.com/wiatechkit/wp-content/uploads/2024/02/cloud-computing-1.png"
+                      alt="Data Service"
+                      className="icon-img"
+                    />
+                  </div>
+                  <h4 className="icon-title">Data Service</h4>
+                  <div className="tick-icon">
+                    <FaCheck />
+                  </div>
+                </div>
+              </div>
+              <div className="icon-box">
+                <div className="icon-box-inner">
+                  <div className="icon">
+                    <img
+                      src="https:\/\/themesflat.com\/wiatechkit\/wp-content\/uploads\/2024\/02\/cyber-security-1.png"
+                      alt="Cyber Security Solutions"
+                      className="icon-img"
+                    />
+                  </div>
+                  <h4 className="icon-title">Cyber Security Solutions</h4>
+                  <div className="tick-icon">
+                    <FaCheck />
+                  </div>
+                </div>
+              </div>
+              {/* Collaborative Partnership Box */}
+              <div className="icon-box">
+                <div className="icon-box-inner">
+                  <div className="icon">
+                    <img
+                      src="https://themesflat.com/wiatechkit/wp-content/uploads/2024/02/collaboration-1.png"
+                      alt="Collaborative Partnership"
+                      className="icon-img"
+                    />
+                  </div>
+                  <h4 className="icon-title">Collaborative Partnership</h4>
+                  <div className="tick-icon">
+                    <FaCheck />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div >
+
+      <div className="section10">
+        <div className="container">
+          <div className="left-container">
+            <div className="image-container">
+              <img src="https://themesflat.com/wiatechkit/wp-content/uploads/2024/02/chat-2.png" alt="chat image" />
+            </div>
+            <p className="heading">Let’s Discuss & Start IT <br /> Consultations</p>
+            <button className="cta-button">
+              Let’s Talk <FaAngleRight />
+            </button>
+          </div>
+          <div className="right-container">
+            <div className="image-circular">
+              <img src="https://themesflat.com/wiatechkit/wp-content/uploads/2024/03/user3-Z32MA5F.jpg" alt="user" className="circle-image" />
+              <img src="https://themesflat.com/wiatechkit/wp-content/uploads/2024/03/user2-Z32MA5F.jpg" alt="user" className="circle-image" />
+              <img src="https://themesflat.com/wiatechkit/wp-content/uploads/2024/03/user1-Z32MA5F.jpg" alt="user" className="circle-image" />
+            </div>
+            <p className="clients-title">1.8 million+ Trusted Clients</p>
+
+          </div>
+        </div>
+      </div>
+
+      <div className="section11">
+        <section className="testimonials-section">
+          <div className="testimonials-header">
+            <h2>Clients Testimonials</h2>
+            <h3>Why People Say About Our <br /> Business Services</h3>
+          </div>
+
+          <div className="testimonial-carousel">
+            <Slider {...settings3}>
+              {testimonials.map((testimonial, index) => (
+                <div key={index} className="testimonial">
+                  <div className="testimonial-inner">
+                    <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', gap: '10px', justifyContent: 'space-between' }}>
+                      <img style={{ width: '40px' }} src="https://themesflat.com/wiatechkit/wp-content/uploads/2024/02/Vector-1.png" alt="quote" className="quote-icon" />
+                      <img style={{ width: '140px' }} src={testimonial.icon} alt="quote" className="quote-icon" />
+                    </div>
+                    <hr style={{ margin: '40px 0', backgroundColor: '#ccc' }} />
+                    <p className="testimonial-text">{testimonial.description}</p>
+                    <div className="testimonial-info">
+                      <img
+                        className="testimonial-image"
+                        src={testimonial.image}
+                        alt={testimonial.name}
+                      />
+                      <div>
+                        <h4 className="testimonial-name">{testimonial.name}</h4>
+                        <p className="testimonial-title">{testimonial.position}</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </Slider>
+          </div>
+        </section>
+      </div>
+
+      <div className="section12">
+        <div className="blogs-header">
+          <h2>Latest News & Blog
+          </h2>
+          <h3>Read Our Latest News & Blog
+          </h3>
+        </div>
+        <div className="blog-grid-container">
+          {/* Left Featured Blog */}
+          <div className="blog-card featured">
+            <img src={blogs[3].image} alt={blogs[3].title} />
+            <div className="blog-content">
+              <p className="blog-date">{blogs[3].date}</p>
+              <h3 className="blog-title">{blogs[3].title}</h3>
+              <a className="read-more" href={blogs[3].link}>
+                Read More <FaAngleRight />
+              </a>
+            </div>
+          </div>
+
+          {/* Right Side Blogs */}
+          <div className="side-blogs">
+            {blogs.slice(0, 3).map((blog, index) => (
+              <div className="blog-card" key={index}>
+                <img src={blog.image} alt={blog.title} />
+                <div className="blog-content">
+                  <p className="blog-date">{blog.date}</p>
+                  <h3 className="blog-title">{blog.title}</h3>
+                  <a className="read-more" href={blog.link}>
+                    Read More <FaAngleRight />
+                  </a>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <div className="section13">
+        <section className="contact-section">
+          <div className="contact-container">
+            {/* Left Content */}
+            <div className="contact-left">
+              <div className="contact-heading">Work Inquiry</div>
+              <h3 className="contact-subheading">
+                Let’s Work For your<br />Next Projects ?
+              </h3>
+              <p className="contact-description">
+                We denounce with righteous indignation and like men beguiled and demoralized by the charms
+              </p>
+
+              <div className="contact-box">
+                <img src="https://themesflat.com/wiatechkit/wp-content/uploads/2024/02/%EF%82%95phone-1.png" alt="Phone Icon" className="icon" />
+                <div>
+                  <h4 className="contact-box-title">Call For Inquiry</h4>
+                  <p className="contact-box-description">+236 (456) 896 22</p>
+                </div>
+              </div>
+
+              <div className="contact-box">
+                <img src="https://themesflat.com/wiatechkit/wp-content/uploads/2024/02/%EF%82%95envelope.png" alt="Email Icon" className="icon" />
+                <div>
+                  <h4 className="contact-box-title">Send Us Email</h4>
+                  <p className="contact-box-description">infotech@gmail.com</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Right Form Side */}
+            <div className="contact-right">
+              <h4 className="form-heading">Need Help For Project!</h4>
+              <p className="form-description">
+                We are ready to help your next projects, let’s work together
+              </p>
+
+              <form className="contact-form">
+                <div className="form-row">
+                  <input type="text" name="name" placeholder="Name" required />
+                  <input type="email" name="email" placeholder="Email" required />
+                </div>
+
+                <select name="service" required>
+                  <option value="">Choose Services</option>
+                  <option value="web">Web Development</option>
+                  <option value="design">UI/UX Design</option>
+                  <option value="seo">SEO & Marketing</option>
+                  <option value="other">Other</option>
+                </select>
+
+                <textarea name="message" placeholder="Message" required></textarea>
+                <button className="read-more-btn" type="submit">Send Message Us <FaAngleRight /></button>
+              </form>
+            </div>
+          </div>
+        </section>
+      </div>
+      <div className="footer-section">
+        <footer className="footer">
+          <div className="footer-overlay">
+            <div className="footer-content">
+              <div className="footer-section logo">
+                <img src="https://themesflat.com/wiatechkit/wp-content/uploads/2024/02/Logo-1.png" alt="WiaTech Logo" />
+                <p className="footer-description">Sed ut persiciatis unde omnis natus voluptatem accusantium dolore</p>
+                <div className="social-media">
+                  <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
+                    <i className="fab fa-facebook-f"></i>
+                  </a>
+                  <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
+                    <i className="fab fa-twitter"></i>
+                  </a>
+                  <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
+                    <i className="fab fa-linkedin-in"></i>
+                  </a>
+                  <a href="https://youtube.com" target="_blank" rel="noopener noreferrer">
+                    <i className="fab fa-youtube"></i>
+                  </a>
+                </div>
+              </div>
+              <div className="footer-section one">
+                <h3>IT Services</h3>
+                <ul>
+                  <li><FaAngleRight /> IT Consultancy</li>
+                  <li><FaAngleRight /> IT Management</li>
+                  <li><FaAngleRight /> IT Supports</li>
+                  <li><FaAngleRight /> Cloud Computing</li>
+                  <li><FaAngleRight /> Cyber Security</li>
+                </ul>
+              </div>
+              <div className="footer-section two">
+                <h3>Support</h3>
+                <ul>
+                  <li><FaAngleRight /> Forum Support</li>
+                  <li><FaAngleRight /> Help & FAQ</li>
+                  <li><FaAngleRight /> Contact Us</li>
+                  <li><FaAngleRight /> Pricing and plans</li>
+                  <li><FaAngleRight /> Cookies Policy</li>
+                </ul>
+              </div>
+              <div className="footer-section newsletter">
+                <h3>Newsletter</h3>
+                <p>Subscribe our newsletter to get more updates</p>
+                <div className="newsletter-form">
+                  <input type="email" placeholder="Email Address" />
+                  <button className="read-more-btn">Sign Up <FaAngleRight /></button>
+                </div>
+                <p>By subscribing, you’re accept <a style={{ color: '#000', fontWeight: '600',textDecorationLine: 'none' }} href="/privacy-policy">Privacy Policy</a></p>
+              </div>
+            </div>
+            <div className="footer-bottom">
+              <p>© 2024 WiaTech - Themesflat. All rights reserved.</p>
+              <button className="scroll-top-btn">↑</button>
+            </div>
+          </div>
+        </footer>
       </div>
     </>
   );
