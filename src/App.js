@@ -1,11 +1,11 @@
-import React, { useEffect, useState } from "react"; // Import React and hooks
+import React, { useEffect, useRef, useState } from "react"; // Import React and hooks
 import { buildStyles, CircularProgressbar } from 'react-circular-progressbar'; // Import CircularProgressbar and styles
 import 'react-circular-progressbar/dist/styles.css'; // Import styles for CircularProgressbar
 import "./App.css"; // Import custom styles
 import Slider from "react-slick"; // Import Slider component
 import "slick-carousel/slick/slick.css"; // Import slick carousel styles
 import "slick-carousel/slick/slick-theme.css"; // Import slick carousel theme styles
-import { FaAngleLeft, FaAngleRight, FaCheck, FaStar } from "react-icons/fa"; // Import icons
+import { FaAngleDown, FaAngleLeft, FaAngleRight, FaArrowUp, FaCheck, FaStar } from "react-icons/fa"; // Import icons
 import { IoIosArrowRoundForward } from "react-icons/io";
 // Define slides data
 const slides = [
@@ -272,10 +272,103 @@ const Home01Slider = () => {
     },
   ];
 
+  const sliderRef = useRef(null);
+
+  const handleScrollToTop = () => {
+    if (sliderRef.current) {
+      sliderRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  };
+  const [isSearchVisible, setIsSearchVisible] = useState(false);
+
+  const toggleSearch = () => {
+    setIsSearchVisible(!isSearchVisible);
+  };
+
 
   return (
     <>
-      <div className="slider-container">
+      <div className="header-section">
+        <header className="header-container">
+          {/* Top Section with Address and Support */}
+          <div className="header-top">
+            <div className="header-address">
+              <ul>
+                <li>
+                  <i className="fas fa-map-marker-alt"></i>
+                  55 Main Street, 2nd block, Malborne, Australia
+                </li>
+                <li>
+                  <i className="fas fa-envelope"></i>
+                  support@gmail.com
+                </li>
+              </ul>
+            </div>
+
+            {/* Social Media Icons */}
+            <div className="header-social">
+              <a href="#" className="social-icon"><i className="fab fa-facebook"></i></a>
+              <a href="#" className="social-icon"><i className="fab fa-twitter"></i></a>
+              <a href="#" className="social-icon"><i className="fab fa-linkedin"></i></a>
+              <a href="#" className="social-icon"><i className="fab fa-youtube"></i></a>
+            </div>
+          </div>
+
+          {/* Bottom Section with Logo, Navigation, and Search */}
+          <div className="header-bottom">
+            {/* Logo */}
+            <div className="header-logo">
+              <a href="#"><img src="https://themesflat.com/wiatechkit/wp-content/uploads/2024/02/Logo.png" alt="Logo" /></a>
+            </div>
+
+            {/* Navigation Menu */}
+            <div className="header-nav">
+              <ul>
+                <li><a href="#">Home</a></li>
+                <li className="dropdown">
+                  <a href="#">Services <FaAngleDown /></a>
+                  <div className="dropdown-content">
+                    <a href="#">Service 1</a>
+                    <a href="#">Service 2</a>
+                    <a href="#">Service 3</a>
+                    <a href="#">Service 4</a>
+                  </div>
+                </li>
+                <li className="dropdown">
+                  <a href="#">Pages <FaAngleDown /></a>
+                  <div className="dropdown-content">
+                    <a href="#">About Us</a>
+                    <a href="#">Contact</a>
+                    <a href="#">Blog</a>
+                    <a href="#">FAQ</a>
+                  </div>
+                </li>
+                <li><a href="#">Portfolio</a></li>
+                <li><a href="#">Contact</a></li>
+              </ul>
+            </div>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '25px' }}>
+              {/* Phone Number */}
+              <div style={{ display: 'flex', alignItems: 'center', gap: '14px' }} className="phone-number">
+                <img src="https://themesflat.com/wiatechkit/wp-content/uploads/2024/02/%EF%82%95phone.png" alt="Logo" />
+                <p style={{ fontSize: '17px', fontWeight: 'bold', color: '#ffffff' }}>+123 456 7890</p>
+              </div>
+              {/* Search Button */}
+              <div className="header-search">
+                <button className="search-toggle" onClick={toggleSearch}>
+                  <i className="fas fa-search"></i>
+                </button>
+                {isSearchVisible && (
+                  <div className="search-bar">
+                    <input type="text" placeholder="Search..." />
+                  </div>
+                )}
+              </div>
+            </div>
+          </div>
+        </header>
+      </div>
+      <div className="slider-container" ref={sliderRef}>
         {slides.map((slide, index) => (
           <div
             className={`slide ${index === currentSlide ? "active" : ""}`} // Add active class to current slide
@@ -1038,6 +1131,7 @@ const Home01Slider = () => {
               <div className="footer-section logo">
                 <img src="https://themesflat.com/wiatechkit/wp-content/uploads/2024/02/Logo-1.png" alt="WiaTech Logo" />
                 <p className="footer-description">Sed ut persiciatis unde omnis natus voluptatem accusantium dolore</p>
+                <h3 className="follow-us">Follow Us</h3>
                 <div className="social-media">
                   <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
                     <i className="fab fa-facebook-f"></i>
@@ -1080,12 +1174,23 @@ const Home01Slider = () => {
                   <input type="email" placeholder="Email Address" />
                   <button className="read-more-btn">Sign Up <FaAngleRight /></button>
                 </div>
-                <p>By subscribing, you’re accept <a style={{ color: '#000', fontWeight: '600',textDecorationLine: 'none' }} href="/privacy-policy">Privacy Policy</a></p>
+                <p>By subscribing, you’re accept <a style={{ color: '#000', fontWeight: '600', textDecorationLine: 'none' }} href="/privacy-policy">Privacy Policy</a></p>
               </div>
+
+              <button className="scroll-top-btn" onClick={handleScrollToTop}><FaArrowUp /></button>
             </div>
             <div className="footer-bottom">
-              <p>© 2024 WiaTech - Themesflat. All rights reserved.</p>
-              <button className="scroll-top-btn">↑</button>
+              <div className="footer-content">
+                <div className="footer-left">
+                  <p>&copy; 2024 WiaTech - Themesflat. All rights reserved.</p>
+                </div>
+                <div className="footer-right">
+                  <a href="#">Company</a>
+                  <a href="#">Support</a>
+                  <a href="#">Privacy</a>
+                  <a href="#">FAQs</a>
+                </div>
+              </div>
             </div>
           </div>
         </footer>
