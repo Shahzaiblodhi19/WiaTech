@@ -288,7 +288,7 @@ const Home01Slider = () => {
 
   return (
     <>
-      <div className="header-section">
+      <div className="header-section" ref={sliderRef}>
         <header className="header-container">
           {/* Top Section with Address and Support */}
           <div className="header-top">
@@ -368,7 +368,7 @@ const Home01Slider = () => {
           </div>
         </header>
       </div>
-      <div className="slider-container" ref={sliderRef}>
+      <div className="slider-container" >
         {slides.map((slide, index) => (
           <div
             className={`slide ${index === currentSlide ? "active" : ""}`} // Add active class to current slide
