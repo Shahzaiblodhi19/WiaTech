@@ -5,7 +5,7 @@ import "./App.css"; // Import custom styles
 import Slider from "react-slick"; // Import Slider component
 import "slick-carousel/slick/slick.css"; // Import slick carousel styles
 import "slick-carousel/slick/slick-theme.css"; // Import slick carousel theme styles
-import { FaAngleDown, FaAngleLeft, FaAngleRight, FaArrowUp, FaCheck, FaStar } from "react-icons/fa"; // Import icons
+import { FaAngleDown, FaAngleLeft, FaAngleRight, FaArrowUp, FaBars, FaCheck, FaStar, FaTimes } from "react-icons/fa"; // Import icons
 import { IoIosArrowRoundForward } from "react-icons/io";
 // Define slides data
 const slides = [
@@ -284,6 +284,8 @@ const Home01Slider = () => {
   const toggleSearch = () => {
     setIsSearchVisible(!isSearchVisible);
   };
+  const [isNavVisible, setNavVisible] = useState(false);
+  const toggleNav = () => setNavVisible(!isNavVisible);
 
 
   return (
@@ -315,14 +317,22 @@ const Home01Slider = () => {
           </div>
 
           {/* Bottom Section with Logo, Navigation, and Search */}
-          <div className="header-bottom">
+          <div className="header-bottom ">
             {/* Logo */}
-            <div className="header-logo">
-              <a href="#"><img src="https://themesflat.com/wiatechkit/wp-content/uploads/2024/02/Logo.png" alt="Logo" /></a>
+            <div className="header-logo-container">
+              <div className="header-logo">
+                <a href="#">
+                  <img src="https://themesflat.com/wiatechkit/wp-content/uploads/2024/02/Logo.png" alt="Logo" />
+                </a>
+              </div>
+              {/* Hamburger Menu */}
+              <button className="menu-toggle" onClick={toggleNav}>
+                <FaBars size={24} color="#ffffff" />
+              </button>
             </div>
 
             {/* Navigation Menu */}
-            <div className="header-nav">
+            <div className={`header-nav mhm ${isNavVisible ? 'active' : ''}`}>
               <ul>
                 <li><a href="#">HOME</a></li>
                 <li><a href="#">ABOUT</a></li>
@@ -331,12 +341,14 @@ const Home01Slider = () => {
                 <li><a href="#">CONTACT</a></li>
               </ul>
             </div>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '25px' }}>
-              {/* Phone Number */}
+
+            {/* Phone Number and Search */}
+            <div className={`display mhm ${isNavVisible ? 'displays' : ''}`} style={{ display: 'flex', alignItems: 'center', gap: '25px' }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '14px' }} className="phone-number">
-                <img src="https://themesflat.com/wiatechkit/wp-content/uploads/2024/02/%EF%82%95phone.png" alt="Logo" />
+                <img src="https://themesflat.com/wiatechkit/wp-content/uploads/2024/02/%EF%82%95phone.png" alt="Phone" />
                 <p style={{ fontSize: '17px', fontWeight: 'bold', color: '#ffffff' }}>+1 (412) 546-6730</p>
               </div>
+
               {/* Search Button */}
               <div className="header-search">
                 <button className="search-toggle" onClick={toggleSearch}>
@@ -348,9 +360,51 @@ const Home01Slider = () => {
                   </div>
                 )}
               </div>
+
+
             </div>
           </div>
         </header>
+      </div>
+      <div className={`header-nav-mobile ${isNavVisible ? 'active' : ''}`}>
+        <div className="close-btn" onClick={() => setNavVisible(false)}>
+          <FaTimes />
+        </div>
+        <div className="header-bottom">
+
+          {/* Navigation Menu */}
+          <div className={`header-nav`}>
+            <ul>
+              <li><a href="#">HOME</a></li>
+              <li><a href="#">ABOUT</a></li>
+              <li><a href="#">SERVICES</a></li>
+              <li><a href="#">FAQ</a></li>
+              <li><a href="#">CONTACT</a></li>
+            </ul>
+          </div>
+
+          {/* Phone Number and Search */}
+          <div className={`display`} style={{ display: 'flex', alignItems: 'center', gap: '25px' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '14px' }} className="phone-number">
+              <img src="https://themesflat.com/wiatechkit/wp-content/uploads/2024/02/%EF%82%95phone.png" alt="Phone" />
+              <p style={{ fontSize: '17px', fontWeight: 'bold', color: '#ffffff' }}>+1 (412) 546-6730</p>
+            </div>
+
+            {/* Search Button */}
+            <div className="header-search">
+              <button className="search-toggle" onClick={toggleSearch}>
+                <i className="fas fa-search"></i>
+              </button>
+              {isSearchVisible && (
+                <div className="search-bar">
+                  <input type="text" placeholder="Search..." />
+                </div>
+              )}
+            </div>
+
+
+          </div>
+        </div>
       </div>
       <div className="slider-container" >
         {slides.map((slide, index) => (
