@@ -296,11 +296,11 @@ const Home01Slider = () => {
               <ul>
                 <li>
                   <i className="fas fa-map-marker-alt"></i>
-                  55 Main Street, 2nd block, Malborne, Australia
+                  146 Morgan Hill Road, Morgan PA, 15064
                 </li>
                 <li>
                   <i className="fas fa-envelope"></i>
-                  support@gmail.com
+                  support@softchain.tech
                 </li>
               </ul>
             </div>
@@ -324,34 +324,18 @@ const Home01Slider = () => {
             {/* Navigation Menu */}
             <div className="header-nav">
               <ul>
-                <li><a href="#">Home</a></li>
-                <li className="dropdown">
-                  <a href="#">Services <FaAngleDown /></a>
-                  <div className="dropdown-content">
-                    <a href="#">Service 1</a>
-                    <a href="#">Service 2</a>
-                    <a href="#">Service 3</a>
-                    <a href="#">Service 4</a>
-                  </div>
-                </li>
-                <li className="dropdown">
-                  <a href="#">Pages <FaAngleDown /></a>
-                  <div className="dropdown-content">
-                    <a href="#">About Us</a>
-                    <a href="#">Contact</a>
-                    <a href="#">Blog</a>
-                    <a href="#">FAQ</a>
-                  </div>
-                </li>
-                <li><a href="#">Portfolio</a></li>
-                <li><a href="#">Contact</a></li>
+                <li><a href="#">HOME</a></li>
+                <li><a href="#">ABOUT</a></li>
+                <li><a href="#">SERVICES</a></li>
+                <li><a href="#">FAQ</a></li>
+                <li><a href="#">CONTACT</a></li>
               </ul>
             </div>
             <div style={{ display: 'flex', alignItems: 'center', gap: '25px' }}>
               {/* Phone Number */}
               <div style={{ display: 'flex', alignItems: 'center', gap: '14px' }} className="phone-number">
                 <img src="https://themesflat.com/wiatechkit/wp-content/uploads/2024/02/%EF%82%95phone.png" alt="Logo" />
-                <p style={{ fontSize: '17px', fontWeight: 'bold', color: '#ffffff' }}>+123 456 7890</p>
+                <p style={{ fontSize: '17px', fontWeight: 'bold', color: '#ffffff' }}>+1 (412) 546-6730</p>
               </div>
               {/* Search Button */}
               <div className="header-search">
