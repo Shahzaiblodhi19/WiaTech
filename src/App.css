@@ -358,6 +358,7 @@ html {
 .menu-toggle {
   display: none;
 }
+
 /* Mobile and Tablet Responsiveness */
 @media (max-width: 768px) {
   .menu-toggle {
@@ -367,18 +368,23 @@ html {
     color: #fff;
     cursor: pointer;
   }
+
   .section9 {
     .icon-boxes-container {
       padding: 0 50px !important;
-    }}
+    }
+  }
+
   .header-bottom {
     top: 17% !important;
     flex-direction: column;
     padding: 20px;
   }
-.content{
-  margin-top: 200px !important;
-}
+
+  .content {
+    margin-top: 200px !important;
+  }
+
   .menu-toggle {
     display: block;
     background: transparent;

@@ -295,13 +295,17 @@ const Home01Slider = () => {
       const headerBottom = document.querySelector('.header-bottom');
       if (headerBottom) {
         if (window.scrollY > 0) {
-          headerBottom.style.top = '0';
-          headerBottom.style.backgroundColor = 'rgba(20, 22, 24, 0.91)';
-          headerBottom.style.color = '#ffffff';
+          headerBottom.style.setProperty('top', '0', 'important');
+          headerBottom.style.setProperty('background-color', 'rgba(20, 22, 24, 0.91)', 'important');
+          headerBottom.style.setProperty('color', '#ffffff', 'important');
         } else {
-          headerBottom.style.top = '7%';
-          headerBottom.style.backgroundColor = '#FFFFFF0D';
-          headerBottom.style.color = '#ffffff';
+          if (window.innerWidth <= 768) {
+            headerBottom.style.setProperty('top', '17%', 'important');
+          } else {
+            headerBottom.style.setProperty('top', '7%', 'important');
+          }
+          headerBottom.style.setProperty('background-color', '#FFFFFF0D', 'important');
+          headerBottom.style.setProperty('color', '#ffffff', 'important');
         }
       }
     };
