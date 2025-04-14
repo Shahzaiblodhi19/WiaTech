@@ -279,6 +279,55 @@ const Home01Slider = () => {
       sliderRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
   };
+
+  const aboutRef = useRef(null);
+  const servicesRef = useRef(null);
+  const blogsRef = useRef(null);
+  const contactRef = useRef(null);
+
+  const handleScrollToAbout = () => {
+    if (aboutRef.current) {
+      aboutRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  };
+  useEffect(() => {
+    const handleScroll = () => {
+      const headerBottom = document.querySelector('.header-bottom');
+      if (headerBottom) {
+        if (window.scrollY > 0) {
+          headerBottom.style.top = '0';
+          headerBottom.style.backgroundColor = 'rgba(20, 22, 24, 0.91)';
+          headerBottom.style.color = '#ffffff';
+        } else {
+          headerBottom.style.top = '7%';
+          headerBottom.style.backgroundColor = '#FFFFFF0D';
+          headerBottom.style.color = '#ffffff';
+        }
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const handleScrollToServices = () => {
+    if (servicesRef.current) {
+      servicesRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  };
+
+  const handleScrollToBlogs = () => {
+    if (blogsRef.current) {
+      blogsRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  };
+
+  const handleScrollToContact = () => {
+    if (contactRef.current) {
+      contactRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  };
+
   const [isSearchVisible, setIsSearchVisible] = useState(false);
 
   const toggleSearch = () => {
@@ -334,11 +383,11 @@ const Home01Slider = () => {
             {/* Navigation Menu */}
             <div className={`header-nav mhm ${isNavVisible ? 'active' : ''}`}>
               <ul>
-                <li><a href="#">HOME</a></li>
-                <li><a href="#">ABOUT</a></li>
-                <li><a href="#">SERVICES</a></li>
-                <li><a href="#">FAQ</a></li>
-                <li><a href="#">CONTACT</a></li>
+                <li><a style={{ cursor: 'pointer' }} onClick={handleScrollToTop}>HOME</a></li>
+                <li><a style={{ cursor: 'pointer' }} onClick={handleScrollToAbout}>ABOUT</a></li>
+                <li><a style={{ cursor: 'pointer' }} onClick={handleScrollToServices}>SERVICES</a></li>
+                <li><a style={{ cursor: 'pointer' }} onClick={handleScrollToBlogs}>BLOGS</a></li>
+                <li><a style={{ cursor: 'pointer' }} onClick={handleScrollToContact}>CONTACT</a></li>
               </ul>
             </div>
 
@@ -375,11 +424,11 @@ const Home01Slider = () => {
           {/* Navigation Menu */}
           <div className={`header-nav`}>
             <ul>
-              <li><a href="#">HOME</a></li>
-              <li><a href="#">ABOUT</a></li>
-              <li><a href="#">SERVICES</a></li>
-              <li><a href="#">FAQ</a></li>
-              <li><a href="#">CONTACT</a></li>
+              <li><a style={{ cursor: 'pointer' }} onClick={() => { handleScrollToTop(); setNavVisible(false); }}>HOME</a></li>
+              <li><a style={{ cursor: 'pointer' }} onClick={() => { handleScrollToAbout(); setNavVisible(false); }}>ABOUT</a></li>
+              <li><a style={{ cursor: 'pointer' }} onClick={() => { handleScrollToServices(); setNavVisible(false); }}>SERVICES</a></li>
+              <li><a style={{ cursor: 'pointer' }} onClick={() => { handleScrollToBlogs(); setNavVisible(false); }}>BLOGS</a></li>
+              <li><a style={{ cursor: 'pointer' }} onClick={() => { handleScrollToContact(); setNavVisible(false); }}>CONTACT</a></li>
             </ul>
           </div>
 
@@ -516,7 +565,7 @@ const Home01Slider = () => {
         </div>
       </div>
 
-      <div className="section4">
+      <div className="section4" ref={aboutRef}>
         <div className="flex-container">
           {/* First Section with Image and Overlay */}
           <div className="flex-item first-section">
@@ -589,7 +638,7 @@ const Home01Slider = () => {
         </div>
       </div>
 
-      <div className="section5">
+      <div className="section5" ref={servicesRef}>
         <div className="services-container">
           <div className="services-header">
             <h2 className="popular-services">Popular Services</h2>
@@ -1066,7 +1115,7 @@ const Home01Slider = () => {
         </section>
       </div>
 
-      <div className="section12">
+      <div className="section12" ref={blogsRef}>
         <div className="blogs-header">
           <h2>Latest News & Blog
           </h2>
@@ -1104,7 +1153,7 @@ const Home01Slider = () => {
         </div>
       </div>
 
-      <div className="section13">
+      <div className="section13" ref={contactRef}>
         <section className="contact-section">
           <div className="contact-container">
             {/* Left Content */}
