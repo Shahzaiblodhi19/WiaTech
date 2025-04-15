@@ -4,6 +4,7 @@ import 'react-circular-progressbar/dist/styles.css'; // Import styles for Circul
 import "./App.css"; // Import custom styles
 import Slider from "react-slick"; // Import Slider component
 import "slick-carousel/slick/slick.css"; // Import slick carousel styles
+import { FaFacebook, FaTwitter, FaLinkedin, FaInstagram } from 'react-icons/fa';
 import "slick-carousel/slick/slick-theme.css"; // Import slick carousel theme styles
 import { FaAngleDown, FaAngleLeft, FaAngleRight, FaArrowUp, FaBars, FaCheck, FaStar, FaTimes } from "react-icons/fa"; // Import icons
 import { IoIosArrowRoundForward } from "react-icons/io";
@@ -339,7 +340,11 @@ const Home01Slider = () => {
   };
   const [isNavVisible, setNavVisible] = useState(false);
   const toggleNav = () => setNavVisible(!isNavVisible);
+  const [openIndex, setOpenIndex] = useState(null);
 
+  const toggleFAQ = (index) => {
+    setOpenIndex(openIndex === index ? null : index);
+  };
 
   return (
     <>
@@ -374,8 +379,8 @@ const Home01Slider = () => {
             {/* Logo */}
             <div className="header-logo-container">
               <div className="header-logo">
-                <a href="#">
-                  <img src="https://themesflat.com/wiatechkit/wp-content/uploads/2024/02/Logo.png" alt="Logo" />
+                <a>
+                  <h3 style={{ cursor: 'pointer', fontSize: '28px', fontWeight: 'bold', color: '#fff', marginBottom: '10px', marginTop: '0' }} onClick={handleScrollToTop}>Softchain</h3>
                 </a>
               </div>
               {/* Hamburger Menu */}
@@ -571,22 +576,6 @@ const Home01Slider = () => {
 
       <div className="section4" ref={aboutRef}>
         <div className="flex-container">
-          {/* First Section with Image and Overlay */}
-          <div className="flex-item first-section">
-            <div className="image-container">
-              <img
-                className="main-image"
-                src="https://themesflat.com/wiatechkit/wp-content/uploads/2024/02/img-home01-KE3F9KV.jpg"
-                alt="Main"
-              />
-              <img
-                className="overlay-image"
-                src="https://themesflat.com/wiatechkit/wp-content/uploads/2024/02/Frame.png"
-                alt="Overlay"
-              />
-            </div>
-          </div>
-
           {/* Second Section with Heading, Subheading, and Button */}
           <div className="flex-item second-section">
             <div className="heading-container">
@@ -612,10 +601,22 @@ const Home01Slider = () => {
             </div>
           </div>
 
+          {/* First Section with Image and Overlay */}
+          <div className="flex-item first-section">
+            <div className="image-container">
+              <img
+                className="main-image"
+                src="https://themesflat.com/wiatechkit/wp-content/uploads/2024/03/img-about-NCD53M5.jpg"
+                alt="Main"
+              />
+            </div>
+          </div>
+
+
           {/* Third Section with Counters */}
           <div className="flex-item third-section">
             <div className="experience">
-              <h4>We've 25+ Years Of Experience in Tech Services</h4>
+              <h4>We've <span style={{ color: '#086AD8' }}>25+ Years </span> Of Experience in Tech Services</h4>
               <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium totam rem aperiam, eaque epsa inventore</p>
             </div>
             <div className="counter-container">
@@ -652,197 +653,253 @@ const Home01Slider = () => {
           <div className="service-cards-container">
             <div className="service-card active-service">
               <div className="service-card-inner">
-                <div className="service-icon">
+                <div className="service-icon" style={{ display: 'flex', alignItems: 'start', justifyContent: 'space-between' }}>
                   <span className="service-number">01</span>
+                  <img
+                    src="https://themesflat.com/wiatechkit/wp-content/uploads/2024/02/Icon-1.png"
+                    alt="UX/UI Design"
+                    className="service-image"
+                  />
                 </div>
-                <h4 className="service-title">UX/UI Design</h4>
-                <img
-                  src="https://themesflat.com/wiatechkit/wp-content/uploads/2024/02/Icon-1.png"
-                  alt="UX/UI Design"
-                  className="service-image"
-                />
+                <hr style={{ border: '1px solid rgba(255, 255, 255, 0.27)', margin: '10px 0', marginBottom: '40px', marginTop: '20px' }} />
+                <h4 className="service-title" style={{ marginBottom: '10px' }}>UX/UI Design</h4>
+                <p>We approached WiaTech with complex project deliver</p>
+                <span className="arrow-icon" style={{ marginTop: '18px', fontSize: '26px' }}>→</span>
               </div>
-              <button className="services-btn">
-                <span className="arrow-icon">→</span>
-              </button>
             </div>
 
-            <div className="service-card">
+            <div className="service-card" style={{ color: '#22222' }}>
               <div className="service-card-inner">
-                <div className="service-icon">
-                  <span className="service-number">02</span>
+                <div className="service-icon" style={{ display: 'flex', alignItems: 'start', justifyContent: 'space-between' }}>
+                  <span style={{ color: '#22222' }} className="service-number">02</span>
+                  <img
+                    src="https://themesflat.com/wiatechkit/wp-content/uploads/2024/03/self-development-3.png"
+                    alt="UX/UI Design"
+                    className="service-image"
+                  />
                 </div>
-                <h4 className="service-title">IT Management</h4>
-                <img
-                  src="https://themesflat.com/wiatechkit/wp-content/uploads/2024/02/2-1.png"
-                  alt="IT Management"
-                  className="service-image"
-                />
+                <hr style={{ border: '1px solid rgba(255, 255, 255, 0.27)', margin: '10px 0', marginBottom: '40px', marginTop: '20px' }} />
+                <h4 className="service-title" style={{ marginBottom: '10px' }}>Web Development</h4>
+                <p>We approached WiaTech with complex project deliver</p>
+                <span className="arrow-icon" style={{ marginTop: '18px', fontSize: '26px', color: '#22222' }}>→</span>
               </div>
-              <button className="services-btn">
-                <span className="arrow-icon">→</span>
-              </button>
             </div>
-
-            <div className="service-card">
+            <div className="service-card" style={{ color: '#22222' }}>
               <div className="service-card-inner">
-                <div className="service-icon">
-                  <span className="service-number">03</span>
+                <div className="service-icon" style={{ display: 'flex', alignItems: 'start', justifyContent: 'space-between' }}>
+                  <span style={{ color: '#22222' }} className="service-number">03</span>
+                  <img
+                    src="https://themesflat.com/wiatechkit/wp-content/uploads/2024/03/data-management-2.png"
+                    alt="UX/UI Design"
+                    className="service-image"
+                  />
                 </div>
-                <h4 className="service-title">Data Security</h4>
-                <img
-                  src="https://themesflat.com/wiatechkit/wp-content/uploads/2024/02/3.png"
-                  alt="Data Security"
-                  className="service-image"
-                />
+                <hr style={{ border: '1px solid rgba(255, 255, 255, 0.27)', margin: '10px 0', marginBottom: '40px', marginTop: '20px' }} />
+                <h4 className="service-title" style={{ marginBottom: '10px' }}>
+                  IT Management</h4>
+                <p>We approached WiaTech with complex project deliver</p>
+                <span className="arrow-icon" style={{ marginTop: '18px', fontSize: '26px', color: '#22222' }}>→</span>
               </div>
-              <button className="services-btn">
-                <span className="arrow-icon">→</span>
-              </button>
             </div>
-
-            <div className="service-card">
+            <div className="service-card" style={{ color: '#22222' }}>
               <div className="service-card-inner">
-                <div className="service-icon">
-                  <span className="service-number">04</span>
+                <div className="service-icon" style={{ display: 'flex', alignItems: 'start', justifyContent: 'space-between' }}>
+                  <span style={{ color: '#22222' }} className="service-number">04</span>
+                  <img
+                    src="https://themesflat.com/wiatechkit/wp-content/uploads/2024/03/planning-3.png"
+                    alt="UX/UI Design"
+                    className="service-image"
+                  />
                 </div>
-                <h4 className="service-title">Infrastructure Plan</h4>
-                <img
-                  src="https://themesflat.com/wiatechkit/wp-content/uploads/2024/02/4.png"
-                  alt="Infrastructure Plan"
-                  className="service-image"
-                />
+                <hr style={{ border: '1px solid rgba(255, 255, 255, 0.27)', margin: '10px 0', marginBottom: '40px', marginTop: '20px' }} />
+                <h4 className="service-title" style={{ marginBottom: '10px' }}>Data Security</h4>
+                <p>We approached WiaTech with complex project deliver</p>
+                <span className="arrow-icon" style={{ marginTop: '18px', fontSize: '26px', color: '#22222' }}>→</span>
               </div>
-              <button className="services-btn">
-                <span className="arrow-icon">→</span>
-              </button>
             </div>
-
-            <div className="service-card">
+            <div className="service-card" style={{ color: '#22222' }}>
               <div className="service-card-inner">
-                <div className="service-icon">
-                  <span className="service-number">05</span>
+                <div className="service-icon" style={{ display: 'flex', alignItems: 'start', justifyContent: 'space-between' }}>
+                  <span style={{ color: '#22222' }} className="service-number">05</span>
+                  <img
+                    src="https://themesflat.com/wiatechkit/wp-content/uploads/2024/03/start-up-1-2.png"
+                    alt="UX/UI Design"
+                    className="service-image"
+                  />
                 </div>
-                <h4 className="service-title">Firewall Advancement</h4>
-                <img
-                  src="https://themesflat.com/wiatechkit/wp-content/uploads/2024/02/5.png"
-                  alt="Firewall Advancement"
-                  className="service-image"
-                />
+                <hr style={{ border: '1px solid rgba(255, 255, 255, 0.27)', margin: '10px 0', marginBottom: '40px', marginTop: '20px' }} />
+                <h4 className="service-title" style={{ marginBottom: '10px' }}>Infrastructure Plan</h4>
+                <p>We approached WiaTech with complex project deliver</p>
+                <span className="arrow-icon" style={{ marginTop: '18px', fontSize: '26px', color: '#22222' }}>→</span>
               </div>
-              <button className="services-btn">
-                <span className="arrow-icon">→</span>
-              </button>
             </div>
-
-            <div className="service-card">
+            <div className="service-card" style={{ color: '#22222' }}>
               <div className="service-card-inner">
-                <div className="service-icon">
-                  <span className="service-number">06</span>
+                <div className="service-icon" style={{ display: 'flex', alignItems: 'start', justifyContent: 'space-between' }}>
+                  <span style={{ color: '#22222' }} className="service-number">06</span>
+                  <img
+                    src="https://themesflat.com/wiatechkit/wp-content/uploads/2024/03/cloud-network-2.png"
+                    alt="UX/UI Design"
+                    className="service-image"
+                  />
                 </div>
-                <h4 className="service-title">Desktop Computing</h4>
-                <img
-                  src="https://themesflat.com/wiatechkit/wp-content/uploads/2024/02/6.png"
-                  alt="Desktop Computing"
-                  className="service-image"
-                />
+                <hr style={{ border: '1px solid rgba(255, 255, 255, 0.27)', margin: '10px 0', marginBottom: '40px', marginTop: '20px' }} />
+                <h4 className="service-title" style={{ marginBottom: '10px' }}>Firewall Advancement</h4>
+                <p>We approached WiaTech with complex project deliver</p>
+                <span className="arrow-icon" style={{ marginTop: '18px', fontSize: '26px', color: '#22222' }}>→</span>
               </div>
-              <button className="services-btn">
-                <span className="arrow-icon">→</span>
-              </button>
+            </div>
+            <div className="service-card" style={{ color: '#22222' }}>
+              <div className="service-card-inner">
+                <div className="service-icon" style={{ display: 'flex', alignItems: 'start', justifyContent: 'space-between' }}>
+                  <span style={{ color: '#22222' }} className="service-number">07</span>
+                  <img
+                    src="https://themesflat.com/wiatechkit/wp-content/uploads/2024/03/market-share-1.png"
+                    alt="UX/UI Design"
+                    className="service-image"
+                  />
+                </div>
+                <hr style={{ border: '1px solid rgba(255, 255, 255, 0.27)', margin: '10px 0', marginBottom: '40px', marginTop: '20px' }} />
+                <h4 className="service-title" style={{ marginBottom: '10px' }}>Desktop Computing</h4>
+                <p>We approached WiaTech with complex project deliver</p>
+                <span className="arrow-icon" style={{ marginTop: '18px', fontSize: '26px', color: '#22222' }}>→</span>
+              </div>
+            </div>
+            <div className="service-card" style={{ color: '#22222' }}>
+              <div className="service-card-inner">
+                <div className="service-icon" style={{ display: 'flex', alignItems: 'start', justifyContent: 'space-between' }}>
+                  <span style={{ color: '#22222' }} className="service-number">08</span>
+                  <img
+                    src="https://themesflat.com/wiatechkit/wp-content/uploads/2024/03/software-development-1.png"
+                    alt="UX/UI Design"
+                    className="service-image"
+                  />
+                </div>
+                <hr style={{ border: '1px solid rgba(255, 255, 255, 0.27)', margin: '10px 0', marginBottom: '40px', marginTop: '20px' }} />
+                <h4 className="service-title" style={{ marginBottom: '10px' }}>Market research</h4>
+                <p>We approached WiaTech with complex project deliver</p>
+                <span className="arrow-icon" style={{ marginTop: '18px', fontSize: '26px', color: '#22222' }}>→</span>
+              </div>
             </div>
           </div>
 
           <div className="consultation-card">
             <div className="card-container">
-              <div className="image-box">
-                <img
-                  src="https://themesflat.com/wiatechkit/wp-content/uploads/2024/02/chat-1.png"
-                  alt="Chat"
-                  className="image"
-                />
+              <div className="images" style={{ display: "flex", alignItems: 'start' }}>
+                <img style={{ borderRadius: "50%" }} src="https://themesflat.com/wiatechkit/wp-content/uploads/2024/02/user4-B4R2ENS.jpg" alt="User 4" className="image" />
+                <img style={{ borderRadius: "50%" }} src="https://themesflat.com/wiatechkit/wp-content/uploads/2024/02/user3-B4R2ENS.jpg" alt="User 3" className="image" />
+                <img style={{ borderRadius: "50%" }} src="https://themesflat.com/wiatechkit/wp-content/uploads/2024/02/user2-B4R2ENS.jpg" alt="User 2" className="image" />
+                <img style={{ borderRadius: "50%" }} src="https://themesflat.com/wiatechkit/wp-content/uploads/2024/02/user1-B4R2ENS.jpg" alt="User 1" className="image" />
               </div>
-              <p className="title">Get Free Consultations For Tech Solutions</p>
-              <button className="quote-button">
-                Get A Quote
+              <p className="title">Ready to Get <br /> Consultations to Our Expertise </p>
+              <button className="read-more-btn qo-btn" style={{ marginTop: '0', fontSize: '14px' }}>
+                Read More
                 <FaAngleRight className="quote-icon" />
               </button>
             </div>
           </div>
 
-          <div className="solution-card-container">
-            <div className="container">
-              {/* Main Row Container */}
-              <div className="main-row">
-                <div className="left-section">
-                  <div className="heading-container">
-                    <h1 className="main-heading">Best IT Solutions</h1>
-                    <h3 className="sub-heading">We Prominent Truly IT Your solutions</h3>
-                  </div>
-                  <div className="text-editor">
-                    <p>We denounce with righteous indignation and like men who are so beguiled and demoralized by the charms of pleasure of the moment, so blinded by desire foresee the pain</p>
-                  </div>
-                  <div className="piecharts-container">
-                    <div className="piechart-dividers">
-                      <div className="piechart" style={{ fontWeight: "bold" }}>
-                        <CircularProgressbar
-                          value={68}
-                          text="68%"
-                          styles={buildStyles({
-                            pathColor: "#3858e9",         // Blue
-                            textColor: "#222222",
-                            trailColor: "transparent",
-                            textSize: "26px",
-                          })}
-                        />
-                      </div>
-                      <div className="piechart-title">Business Strategy</div>
-                    </div>
-                    <div className="piechart-dividers">
-                      <div className="piechart" style={{ fontWeight: "bold" }}>
-                        <CircularProgressbar
-                          value={93}
-                          text="93%"
-                          styles={buildStyles({
-                            pathColor: "#3858e9",         // Blue
-                            textColor: "#222222",
-                            trailColor: "transparent",
-                            textSize: "26px",
-                          })}
-                        />
-                      </div>
-                      <div className="piechart-title">Technology Solutions</div>
-                    </div>
-                  </div>
+        </div>
+      </div>
+      <div className="solution-card-container" >
+        <div className="container">
+          {/* Main Row Container */}
+          <div className="main-row">
+            <div className="left-section" style={{ paddingLeft: '0' }}>
+              <div className="faq-container">
+                <h1>Cyber Security Solutions</h1>
+                <h2>Highly Tailored IT Design, Management & Support <span style={{ color: '#086AD8' }}> Services</span></h2>
 
-                  <div className="button-container" style={{ display: "flex", alignItems: "start", gap: "20px" }}>
-                    <button className="read-more-btn">Read More <FaAngleRight /></button>
-                    <div className="imagess" style={{ display: "flex", alignItems: "start", gap: "24px", color: '#222222' }}>
-                      <div className="images" style={{ display: "flex", alignItems: 'start' }}>
-                        <img style={{ borderRadius: "50%" }} src="https://themesflat.com/wiatechkit/wp-content/uploads/2024/02/user4-B4R2ENS.jpg" alt="User 4" className="image" />
-                        <img style={{ borderRadius: "50%" }} src="https://themesflat.com/wiatechkit/wp-content/uploads/2024/02/user3-B4R2ENS.jpg" alt="User 3" className="image" />
-                        <img style={{ borderRadius: "50%" }} src="https://themesflat.com/wiatechkit/wp-content/uploads/2024/02/user2-B4R2ENS.jpg" alt="User 2" className="image" />
-                        <img style={{ borderRadius: "50%" }} src="https://themesflat.com/wiatechkit/wp-content/uploads/2024/02/user1-B4R2ENS.jpg" alt="User 1" className="image" />
-                      </div>
-                      <h3 style={{ fontSize: '18px', fontWeight: '400' }}>10m + Customers</h3>
-                    </div>
+                <div className="faq-item">
+                  <div className="faq-title" onClick={() => toggleFAQ(0)}>
+                    <span>Network Security & Protection</span>
+                    <span className={`faq-arrow ${openIndex === 0 ? 'open' : ''}`}>›</span>
                   </div>
+                  {openIndex === 0 && (
+                    <div className="faq-content">
+                      <p>Accelerate innovation with world-class tech teams. We’ll match you to an entire remote team.</p>
+                    </div>
+                  )}
                 </div>
 
-                {/* Right Section */}
-                <div className="right-section">
-                  <div className="image-container">
-                    <img src="https://themesflat.com/wiatechkit/wp-content/uploads/2024/02/img-home01-YPHFSCF.jpg" alt="Main Background" />
-                    <div className="experience-card">
-                      <h1 className="experience-number">25 <span className="plus">+</span></h1>
-                      <p className="experience-label">Years Of Experience</p>
-                      <div className="underline"></div>
-                      <div className="trust-row">
-                        {[...Array(5)].map((_, i) => (
-                          <FaStar key={i} className="star-icon" />
-                        ))}
-                        <span className="trust-label">Trustpoint</span>
+                <div className="faq-item">
+                  <div className="faq-title" onClick={() => toggleFAQ(1)}>
+                    <span>Browser Safety & Farewell</span>
+                    <span className={`faq-arrow ${openIndex === 1 ? 'open' : ''}`}>›</span>
+                  </div>
+                  {openIndex === 1 && (
+                    <div className="faq-content">
+                      <p>Your online safety is our priority. We ensure that browsing is secure with advanced protection measures.</p>
+                    </div>
+                  )}
+                </div>
+
+                <div className="faq-item">
+                  <div className="faq-title" onClick={() => toggleFAQ(2)}>
+                    <span>Infrastructure Technology</span>
+                    <span className={`faq-arrow ${openIndex === 2 ? 'open' : ''}`}>›</span>
+                  </div>
+                  {openIndex === 2 && (
+                    <div className="faq-content">
+                      <p>We provide scalable infrastructure solutions to help your business stay ahead with cutting-edge technology.</p>
+                    </div>
+                  )}
+                </div>
+
+                <div className="faq-item">
+                  <div className="faq-title" onClick={() => toggleFAQ(3)}>
+                    <span>Management & Support Services</span>
+                    <span className={`faq-arrow ${openIndex === 3 ? 'open' : ''}`}>›</span>
+                  </div>
+                  {openIndex === 3 && (
+                    <div className="faq-content">
+                      <p>Our dedicated team provides ongoing support to ensure your IT systems run smoothly at all times.</p>
+                    </div>
+                  )}
+                </div>
+              </div>
+            </div>
+
+            {/* Right Section */}
+            <div className="right-section">
+              <div className="image-containers">
+                <img src="https://themesflat.com/wiatechkit/wp-content/uploads/2024/03/img-sv-9XDVUYR.jpg" />
+                <div className="experience-card">
+                  <div className="piecharts-container" style={{ flexDirection: 'column', width: 'fit-content' }}>
+                    <div className="piechart-dividers">
+                      <div className="piechart" style={{ fontWeight: "bold", width: '30%' }}>
+                        <CircularProgressbar
+                          value={98}
+                          text={`↗`}
+                          styles={buildStyles({
+                            pathColor: "#fff",  // Blue
+                            textColor: "#fff",
+                            trailColor: "transparent",
+                            textSize: "35px",
+                            pathTransition: "stroke-dashoffset 0.5s ease 0s",
+                            pathTransitionDuration: 0.5
+                          })}
+                        />
                       </div>
+                      <div className="piechart-title" style={{ wordWrap: 'nowrap' }}><span style={{ fontSize: '35px' }}>98%</span> <br /> Project Success</div>
+                    </div>
+                    <hr style={{ border: '1px solid rgba(255, 255, 255, 0.27)', margin: '10px 0' }} />
+                    <div className="piechart-dividers">
+                      <div className="piechart" style={{ fontWeight: "bold" }}>
+                        <CircularProgressbar
+                          value={63}
+                          text={`↗`}
+                          styles={buildStyles({
+                            pathColor: "#fff",  // Blue
+                            textColor: "#fff",
+                            trailColor: "transparent",
+                            textSize: "35px",
+                            pathTransition: "stroke-dashoffset 0.5s ease 0s",
+                            pathTransitionDuration: 0.5
+                          })}
+                        />
+                      </div>
+                      <div className="piechart-title"><span style={{ fontSize: '35px' }}>63%</span> <br /> Happy Clients</div>
                     </div>
                   </div>
                 </div>
@@ -1162,54 +1219,83 @@ const Home01Slider = () => {
           <div className="contact-container">
             {/* Left Content */}
             <div className="contact-left">
-              <div className="contact-heading">Work Inquiry</div>
+              <div className="contact-heading">Get In Touch</div>
               <h3 className="contact-subheading">
-                Let’s Work For your<br />Next Projects ?
+                Don’t Hesitate To<br />Contact Us
               </h3>
               <p className="contact-description">
-                We denounce with righteous indignation and like men beguiled and demoralized by the charms
-              </p>
+                Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque inventore              </p>
 
-              <div className="contact-box">
-                <img src="https://themesflat.com/wiatechkit/wp-content/uploads/2024/02/%EF%82%95phone-1.png" alt="Phone Icon" className="icon" />
-                <div>
-                  <h4 className="contact-box-title">Call For Inquiry</h4>
-                  <p className="contact-box-description">+236 (456) 896 22</p>
+              <div className="contact-info-container">
+                <div className="contact-item">
+                  <img src="https://themesflat.com/wiatechkit/wp-content/uploads/2024/03/%EF%8F%85location-dot.png" alt="Location Icon" className="contact-icon" />
+                  <div>
+                    <h3>Location</h3>
+                    <p>55 Main street, 2nd block, Melbourne, Australia</p>
+                  </div>
+                </div>
+                <div className="contact-item">
+                  <img src="https://themesflat.com/wiatechkit/wp-content/uploads/2024/03/%EF%82%95phone-1.png" alt="Phone Icon" className="contact-icon" />
+                  <div>
+                    <h3>Phone</h3>
+                    <p>+1 (368) 567 89 54</p>
+                    <p>+236 (456) 896 22</p>
+                  </div>
+                </div>
+                <div className="contact-item">
+                  <img src="https://themesflat.com/wiatechkit/wp-content/uploads/2024/03/%EF%83%A0envelope.png" alt="Email Icon" className="contact-icon" />
+                  <div>
+                    <h3>Email</h3>
+                    <p>wiatechnfo@gmail.com</p>
+                    <p>www.wiatech.com</p>
+                  </div>
+                </div>
+                <div className="contact-item">
+                  <img src="https://themesflat.com/wiatechkit/wp-content/uploads/2024/03/%EF%87%A0share-nodes.png" />
+                  <div>
+                    <h3>Social</h3>
+                    <div className="social-icons">
+                      <div><FaFacebook className="social-icon" /></div>
+                      <div><FaTwitter className="social-icon" /></div>
+                      <div><FaLinkedin className="social-icon" /></div>
+                      <div><FaInstagram className="social-icon" /></div>
+                    </div>
+                  </div>
+
+
                 </div>
               </div>
-
-              <div className="contact-box">
-                <img src="https://themesflat.com/wiatechkit/wp-content/uploads/2024/02/%EF%82%95envelope.png" alt="Email Icon" className="icon" />
-                <div>
-                  <h4 className="contact-box-title">Send Us Email</h4>
-                  <p className="contact-box-description">infotech@gmail.com</p>
-                </div>
+              <div style={{marginTop: '30px', width: '100%', height: 'auto'}}>
+                <img src="https://themesflat.com/wiatechkit/wp-content/uploads/2024/03/img-contact-YH5FNB4.jpg" alt="Map" className="map" style={{width: '100%', height: '100%', objectFit: 'cover'}} />
               </div>
             </div>
 
             {/* Right Form Side */}
             <div className="contact-right">
-              <h4 className="form-heading">Need Help For Project!</h4>
-              <p className="form-description">
-                We are ready to help your next projects, let’s work together
-              </p>
+              <h4 className="form-heading" style={{ color: 'black', textAlign: 'left', fontWeight: '500' }}>Send Us a Message</h4>
 
-              <form className="contact-form">
-                <div className="form-row">
-                  <input type="text" name="name" placeholder="Name" required />
-                  <input type="email" name="email" placeholder="Email" required />
+              <form className="contact-form" style={{ marginTop: '20px' }}>
+                <div className="form-group">
+                  <label htmlFor="name">Full Name <span style={{ color: 'red' }}>*</span></label>
+                  <input type="text" id="name" name="name" required placeholder="Enter your full name" />
                 </div>
 
-                <select name="service" required>
-                  <option value="">Choose Services</option>
-                  <option value="web">Web Development</option>
-                  <option value="design">UI/UX Design</option>
-                  <option value="seo">SEO & Marketing</option>
-                  <option value="other">Other</option>
-                </select>
+                <div className="form-group" style={{ marginTop: '20px' }}>
+                  <label htmlFor="email">Email Address <span style={{ color: 'red' }}>*</span></label>
+                  <input type="email" id="email" name="email" required placeholder="Enter your email address" />
+                </div>
 
-                <textarea name="message" placeholder="Message" required></textarea>
-                <button className="read-more-btn" type="submit">Send Message Us <FaAngleRight /></button>
+                <div className="form-group" style={{ marginTop: '20px' }}>
+                  <label htmlFor="website">Website <span style={{ color: 'red' }}>*</span></label>
+                  <input type="url" id="website" name="website" required placeholder="Enter your website" />
+                </div>
+
+                <div className="form-group" style={{ marginTop: '20px' }}>
+                  <label htmlFor="message">Message <span style={{ color: 'red' }}>*</span></label>
+                  <textarea id="message" name="message" required placeholder="Enter your message"></textarea>
+                </div>
+
+                <button className="read-more-btn" style={{ margin: '20px 0 0px 0' }} type="submit">Send Message Us <FaAngleRight /></button>
               </form>
             </div>
           </div>
@@ -1220,7 +1306,7 @@ const Home01Slider = () => {
           <div className="footer-overlay">
             <div className="footer-content">
               <div className="footer-section logo">
-                <img src="https://themesflat.com/wiatechkit/wp-content/uploads/2024/02/Logo-1.png" alt="WiaTech Logo" />
+                <h3 style={{ fontSize: '28px', fontWeight: 'bold', color: '#000', marginBottom: '10px', marginTop: '0' }}>Softchain</h3>
                 <p className="footer-description">Sed ut persiciatis unde omnis natus voluptatem accusantium dolore</p>
                 <h3 className="follow-us">Follow Us</h3>
                 <div className="social-media">
@@ -1273,7 +1359,7 @@ const Home01Slider = () => {
             <div className="footer-bottom">
               <div className="footer-content">
                 <div className="footer-left">
-                  <p>&copy; 2024 WiaTech - Themesflat. All rights reserved.</p>
+                  <p>&copy; 2024 Softchain. All rights reserved.</p>
                 </div>
                 <div className="footer-right">
                   <a href="#">Company</a>
