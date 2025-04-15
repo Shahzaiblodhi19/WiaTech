@@ -1231,23 +1231,23 @@ const Home01Slider = () => {
                   <img src="https://themesflat.com/wiatechkit/wp-content/uploads/2024/03/%EF%8F%85location-dot.png" alt="Location Icon" className="contact-icon" />
                   <div>
                     <h3>Location</h3>
-                    <p>55 Main street, 2nd block, Melbourne, Australia</p>
+                    <p>146 Morgan Hill Road, Morgan PA, 15064</p>
                   </div>
                 </div>
                 <div className="contact-item">
                   <img src="https://themesflat.com/wiatechkit/wp-content/uploads/2024/03/%EF%82%95phone-1.png" alt="Phone Icon" className="contact-icon" />
                   <div>
                     <h3>Phone</h3>
+                    <p>+1 (412) 546-6730</p>
                     <p>+1 (368) 567 89 54</p>
-                    <p>+236 (456) 896 22</p>
                   </div>
                 </div>
                 <div className="contact-item">
                   <img src="https://themesflat.com/wiatechkit/wp-content/uploads/2024/03/%EF%83%A0envelope.png" alt="Email Icon" className="contact-icon" />
                   <div>
                     <h3>Email</h3>
-                    <p>wiatechnfo@gmail.com</p>
-                    <p>www.wiatech.com</p>
+                    <p>support@softchain.tech</p>
+                    <p>www.softchain.tech</p>
                   </div>
                 </div>
                 <div className="contact-item">
@@ -1265,8 +1265,8 @@ const Home01Slider = () => {
 
                 </div>
               </div>
-              <div style={{marginTop: '30px', width: '100%', height: 'auto'}}>
-                <img src="https://themesflat.com/wiatechkit/wp-content/uploads/2024/03/img-contact-YH5FNB4.jpg" alt="Map" className="map" style={{width: '100%', height: '100%', objectFit: 'cover'}} />
+              <div style={{ marginTop: '30px', width: '100%', height: 'auto' }}>
+                <img src="https://themesflat.com/wiatechkit/wp-content/uploads/2024/03/img-contact-YH5FNB4.jpg" alt="Map" className="map" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
               </div>
             </div>
 
