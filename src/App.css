@@ -774,12 +774,34 @@ html {
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
-    background-color: #000;
     border-radius: 12px;
     box-shadow: 0 10px 60px rgba(67, 67, 67, 0.1);
     padding: 42px 50px;
     overflow: hidden;
     animation: zoomIn 1s ease-in-out;
+    transition: all 0.3s ease;
+  }
+  .card:hover{
+    background-image: url('https://themesflat.com/wiatechkit/wp-content/uploads/2024/02/2.png');
+    background-color: #086ad8 !important;
+  }
+  .card:hover .card-content {
+    color: white !important;
+  }
+
+  .card:hover .card-content p {
+    color: white !important;
+  }
+
+  .card:hover .card-content .btn {
+    color: white !important;
+    border-color: white !important;
+  }
+  .card:hover .card-icon{
+    filter: invert(1) brightness(10000%) contrast(100%) saturate(0) hue-rotate(180deg);
+  }
+  .active-card:hover .card-icon{
+    filter: invert(0) brightness(100%) contrast(100%) saturate(100%) hue-rotate(0deg);
   }
 
   .active-card {
@@ -1455,6 +1477,7 @@ html {
 
   .service-card {
     position: relative;
+    transition: all 0.3s ease;
     width: 30%;
     background-color: white;
     padding: 0 15px;
@@ -1509,11 +1532,32 @@ html {
     color: white;
   }
 
+  .service-card:hover{
+    background-color: #086AD8;
+    color: white;
+  }
+  .service-card:hover .service-number{
+    color: white;
+  }
+  .service-card:hover .service-title{
+    color: white;
+  }
   .active-service .service-number {
     color: white;
   }
+  .service-card:hover .service-image{
+    filter: invert(1) brightness(10000%) contrast(100%) saturate(0) hue-rotate(180deg);
+  }
+  .service-card:hover p{
+    color: white;
+  }
+  .service-card:hover .arrow-icon{
+    color: white;
+  }
+  .active-service:hover .service-image{
+    filter: none !important;
 
-  .active-service .service-title {
+  }.active-service .service-title {
     color: white;
   }
 
@@ -3286,16 +3330,28 @@ html {
     box-shadow: 0 10px 60px rgba(67, 67, 67, 0.1);
     padding: 20px 15px;
     text-align: center;
-    transition: transform 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+  }
+  .icon-box:hover{
+    background-color: #086AD8;
+    color: white;
+  }
+  .icon-box:hover .icon-title{
+    color: white;
+  }
+  .icon-box:hover .icon-img{
+    filter: invert(1) brightness(10000%) contrast(100%) saturate(0) hue-rotate(180deg);
   }
 
   .active-icon-box {
     background-color: #0072ea !important;
     color: white !important;
   }
-
-  .icon-box:hover {
-    transform: translateY(-10px);
+  .active-icon-box .icon-title{
+    color: white !important;
+  }
+  .active-icon-box .icon-img{
+    filter: invert(0) brightness(100%) contrast(100%) saturate(100%) hue-rotate(0deg) !important;
   }
 
   .icon-box-inner {
@@ -3327,7 +3383,9 @@ html {
     font-weight: bold;
     text-transform: capitalize;
   }
-
+  .icon-box:hover .tick-icon{
+    background-color: #d2a98e;
+  }
   .active-icon-box .tick-icon {
     background-color: #d2a98e;
   }

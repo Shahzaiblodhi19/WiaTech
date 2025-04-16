@@ -8,6 +8,7 @@ import { FaFacebook, FaTwitter, FaLinkedin, FaInstagram } from 'react-icons/fa';
 import "slick-carousel/slick/slick-theme.css"; // Import slick carousel theme styles
 import { FaAngleDown, FaAngleLeft, FaAngleRight, FaArrowUp, FaBars, FaCheck, FaStar, FaTimes } from "react-icons/fa"; // Import icons
 import { IoIosArrowRoundForward } from "react-icons/io";
+import logo from "./assets/logo.png";
 // Define slides data
 const slides = [
   {
@@ -378,10 +379,8 @@ const Home01Slider = () => {
           <div className="header-bottom ">
             {/* Logo */}
             <div className="header-logo-container">
-              <div className="header-logo">
-                <a>
-                  <h3 style={{ cursor: 'pointer', fontSize: '28px', fontWeight: 'bold', color: '#fff', marginBottom: '10px', marginTop: '0' }} onClick={handleScrollToTop}>Softchain</h3>
-                </a>
+              <div className="header-logo" style={{ height: 'auto', width: '200px', cursor: 'pointer' }} onClick={handleScrollToTop}>
+                  <img src={logo} alt="Softchain" style={{ height: '100%', width: '100%', cursor: 'pointer' }} onClick={handleScrollToTop} />       
               </div>
               {/* Hamburger Menu */}
               <button className="menu-toggle" onClick={toggleNav}>
@@ -1306,8 +1305,9 @@ const Home01Slider = () => {
           <div className="footer-overlay">
             <div className="footer-content">
               <div className="footer-section logo">
-                <h3 style={{ fontSize: '28px', fontWeight: 'bold', color: '#000', marginBottom: '10px', marginTop: '0' }}>Softchain</h3>
-                <p className="footer-description">Sed ut persiciatis unde omnis natus voluptatem accusantium dolore</p>
+              <div className="header-logo" style={{ height: 'auto', width: '180px', cursor: 'pointer',marginTop:'-20px' }} onClick={handleScrollToTop}>
+                  <img src={logo} alt="Softchain" style={{ height: '100%', width: '100%', cursor: 'pointer' }} onClick={handleScrollToTop} />       
+              </div>                <p className="footer-description">Sed ut persiciatis unde omnis natus voluptatem accusantium dolore</p>
                 <h3 className="follow-us">Follow Us</h3>
                 <div className="social-media">
                   <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
