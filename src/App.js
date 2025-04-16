@@ -489,7 +489,7 @@ const Home01Slider = () => {
                 }}
               ></h1>
               <p className="description">{slide.description}</p>
-              <button className="btn">
+              <button className="btn" onClick={handleScrollToServices}>
                 Explore Our Service <FaAngleRight />
               </button>
             </div>
