@@ -4621,7 +4621,12 @@ html {
   .section13 .contact-section .contact-right {
     padding: 30px;
   }
-
+  .section9 .container {
+    padding: 0 0px !important;
+  }
+  .section10 .container {
+    padding: 0 0px !important;
+  }
 
   .section13 .contact-container {
     grid-template-columns: 1fr;
