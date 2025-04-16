@@ -5487,3 +5487,119 @@ html {
     font-size: 17px;
   }
 }
+
+.choose-section {
+  .why-choose-us {
+    padding: 100px;
+    background-color: #f8f9fa;
+  }
+  
+  .content-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+  
+  .image-section img {
+    width: 100%;
+    max-height: auto;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+
+  .text-section h6 {
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 1.3;
+    color: #086AD8;
+    margin-bottom: 10px;
+  }
+  
+  .text-section h2 {
+    margin-top: 0;
+    font-size: 42px;
+    font-weight: 600;
+    line-height: 1.3;
+    color: #222;
+    margin-bottom: 30px;
+  }
+  
+  .text-section p {
+    font-size: 18px;
+    line-height: 1.7;
+    color: #555;
+    margin-top: 0.5rem;
+  }
+  
+  .services {
+    margin-top: 60px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(18px, 1fr));
+    gap: 50px;
+    margin-top: 2rem;
+    justify-content: flex-start;
+  }
+  
+  .service1 {
+    background-color: #d2a98e;
+    padding: 20px 35px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  .service2 {
+    background-color: #f6f2ed;
+    padding: 20px 35px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .service1 .icon img {
+    width: 45px;
+    height: 45px;
+    object-fit: contain;
+    margin-bottom: 1rem;
+  }
+  .service2 .icon img {
+    width: 45px;
+    height: 45px;
+    object-fit: contain;
+    margin-bottom: 1rem;
+  }
+  .service1 h4 {
+    margin-top: 10px;
+    font-size: 21px;
+    color: #fff;
+    margin-bottom: 10px;
+  }
+  .service2 h4 {
+    margin-top: 10px;
+    font-size: 20px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  .service1 p {
+    font-size: 16px;
+    color: #fff;
+    line-height: 1.5;
+  }
+  .service2 p {
+    font-size: 16px;
+    color: #333;
+    line-height: 1.5;
+  }
+  
+  @media (max-width: 768px) {
+    .why-choose-us {
+      padding: 30px;
+    }
+    .services {
+      grid-template-columns: 1fr;
+    }
+    .content-container {
+      grid-template-columns: 1fr;
+    }
+  
+    .text-section h2 {
+      font-size: 1.5rem;
+    }
+  }
+  
+}

@@ -1,14 +1,13 @@
 import React, { useEffect, useRef, useState } from "react"; // Import React and hooks
-import { buildStyles, CircularProgressbar } from 'react-circular-progressbar'; // Import CircularProgressbar and styles
-import 'react-circular-progressbar/dist/styles.css'; // Import styles for CircularProgressbar
 import "./App.css"; // Import custom styles
 import Slider from "react-slick"; // Import Slider component
 import "slick-carousel/slick/slick.css"; // Import slick carousel styles
 import { FaFacebook, FaTwitter, FaLinkedin, FaInstagram } from 'react-icons/fa';
 import "slick-carousel/slick/slick-theme.css"; // Import slick carousel theme styles
-import { FaAngleDown, FaAngleLeft, FaAngleRight, FaArrowUp, FaBars, FaCheck, FaStar, FaTimes } from "react-icons/fa"; // Import icons
+import { FaAngleLeft, FaAngleRight, FaArrowUp, FaBars, FaCheck, FaTimes } from "react-icons/fa"; // Import icons
 import { IoIosArrowRoundForward } from "react-icons/io";
 import logo from "./assets/logo.png";
+import image from "./assets/service-img.png";
 // Define slides data
 const slides = [
   {
@@ -380,7 +379,7 @@ const Home01Slider = () => {
             {/* Logo */}
             <div className="header-logo-container">
               <div className="header-logo" style={{ height: 'auto', width: '200px', cursor: 'pointer' }} onClick={handleScrollToTop}>
-                  <img src={logo} alt="Softchain" style={{ height: '100%', width: '100%', cursor: 'pointer' }} onClick={handleScrollToTop} />       
+                <img src={logo} alt="Softchain" style={{ height: '100%', width: '100%', cursor: 'pointer' }} onClick={handleScrollToTop} />
               </div>
               {/* Hamburger Menu */}
               <button className="menu-toggle" onClick={toggleNav}>
@@ -540,7 +539,7 @@ const Home01Slider = () => {
             <div className="card  mm">
               <div className="card-content">
                 <img
-                style={{filter: 'brightness(0) saturate(100%) invert(37%) sepia(82%) saturate(1642%) hue-rotate(199deg) brightness(97%) contrast(98%)'}}
+                  style={{ filter: 'brightness(0) saturate(100%) invert(37%) sepia(82%) saturate(1642%) hue-rotate(199deg) brightness(97%) contrast(98%)' }}
                   className="card-icon"
                   src="https://themesflat.com/wiatechkit/wp-content/uploads/2024/02/project-management-1.png"
                   alt="Innovative Technology"
@@ -656,7 +655,7 @@ const Home01Slider = () => {
                 <div className="service-icon" style={{ display: 'flex', alignItems: 'start', justifyContent: 'space-between' }}>
                   <span className="service-number">01</span>
                   <img
-                  style={{filter: 'brightness(0) saturate(100%) invert(37%) sepia(82%) saturate(1642%) hue-rotate(199deg) brightness(97%) contrast(98%)'}}
+                    style={{ filter: 'brightness(0) saturate(100%) invert(37%) sepia(82%) saturate(1642%) hue-rotate(199deg) brightness(97%) contrast(98%)' }}
                     src="https://themesflat.com/wiatechkit/wp-content/uploads/2024/02/Icon-1.png"
                     alt="UX/UI Design"
                     className="service-image"
@@ -802,114 +801,43 @@ const Home01Slider = () => {
 
         </div>
       </div>
-      <div className="solution-card-container" >
-        <div className="container">
-          {/* Main Row Container */}
-          <div className="main-row">
-            <div className="left-section" style={{ paddingLeft: '0' }}>
-              <div className="faq-container">
-                <h1>Cyber Security Solutions</h1>
-                <h2>Highly Tailored IT Design, Management & Support <span style={{ color: '#086AD8' }}> Services</span></h2>
-
-                <div className="faq-item">
-                  <div className="faq-title" onClick={() => toggleFAQ(0)}>
-                    <span>Network Security & Protection</span>
-                    <span className={`faq-arrow ${openIndex === 0 ? 'open' : ''}`}>›</span>
-                  </div>
-                  {openIndex === 0 && (
-                    <div className="faq-content">
-                      <p>Accelerate innovation with world-class tech teams. We’ll match you to an entire remote team.</p>
-                    </div>
-                  )}
-                </div>
-
-                <div className="faq-item">
-                  <div className="faq-title" onClick={() => toggleFAQ(1)}>
-                    <span>Browser Safety & Farewell</span>
-                    <span className={`faq-arrow ${openIndex === 1 ? 'open' : ''}`}>›</span>
-                  </div>
-                  {openIndex === 1 && (
-                    <div className="faq-content">
-                      <p>Your online safety is our priority. We ensure that browsing is secure with advanced protection measures.</p>
-                    </div>
-                  )}
-                </div>
-
-                <div className="faq-item">
-                  <div className="faq-title" onClick={() => toggleFAQ(2)}>
-                    <span>Infrastructure Technology</span>
-                    <span className={`faq-arrow ${openIndex === 2 ? 'open' : ''}`}>›</span>
-                  </div>
-                  {openIndex === 2 && (
-                    <div className="faq-content">
-                      <p>We provide scalable infrastructure solutions to help your business stay ahead with cutting-edge technology.</p>
-                    </div>
-                  )}
-                </div>
-
-                <div className="faq-item">
-                  <div className="faq-title" onClick={() => toggleFAQ(3)}>
-                    <span>Management & Support Services</span>
-                    <span className={`faq-arrow ${openIndex === 3 ? 'open' : ''}`}>›</span>
-                  </div>
-                  {openIndex === 3 && (
-                    <div className="faq-content">
-                      <p>Our dedicated team provides ongoing support to ensure your IT systems run smoothly at all times.</p>
-                    </div>
-                  )}
-                </div>
-              </div>
+      <div className="choose-section">
+        <section className="why-choose-us">
+          <div className="content-container">
+            <div className="image-section">
+              <img
+                src={image}
+                alt="Working Woman"
+                className="image"
+              />
             </div>
-
-            {/* Right Section */}
-            <div className="right-section">
-              <div className="image-containers">
-                <img src="https://themesflat.com/wiatechkit/wp-content/uploads/2024/03/img-sv-9XDVUYR.jpg" />
-                <div className="experience-card">
-                  <div className="piecharts-container" style={{ flexDirection: 'column', width: 'fit-content' }}>
-                    <div className="piechart-dividers">
-                      <div className="piechart" style={{ fontWeight: "bold", width: '30%' }}>
-                        <CircularProgressbar
-                          value={98}
-                          text={`↗`}
-                          styles={buildStyles({
-                            pathColor: "#fff",  // Blue
-                            textColor: "#fff",
-                            trailColor: "transparent",
-                            textSize: "35px",
-                            pathTransition: "stroke-dashoffset 0.5s ease 0s",
-                            pathTransitionDuration: 0.5
-                          })}
-                        />
-                      </div>
-                      <div className="piechart-title" style={{ wordWrap: 'nowrap' }}><span style={{ fontSize: '35px' }}>98%</span> <br /> Project Success</div>
-                    </div>
-                    <hr style={{ border: '1px solid rgba(255, 255, 255, 0.27)', margin: '10px 0' }} />
-                    <div className="piechart-dividers">
-                      <div className="piechart" style={{ fontWeight: "bold" }}>
-                        <CircularProgressbar
-                          value={63}
-                          text={`↗`}
-                          styles={buildStyles({
-                            pathColor: "#fff",  // Blue
-                            textColor: "#fff",
-                            trailColor: "transparent",
-                            textSize: "35px",
-                            pathTransition: "stroke-dashoffset 0.5s ease 0s",
-                            pathTransitionDuration: 0.5
-                          })}
-                        />
-                      </div>
-                      <div className="piechart-title"><span style={{ fontSize: '35px' }}>63%</span> <br /> Happy Clients</div>
-                    </div>
+            <div className="text-section">
+              <h6 style={{ color: '#086AD8' }}>Why Choose Us</h6>
+              <h2>Innovative Strategies for Maximum <span style={{ color: '#086AD8' }}>SEO Impact</span></h2>
+              <p>
+                We are at the forefront of technological innovation, dedicated to
+                providing comprehensive IT solutions that empower businesses.
+              </p>
+              <div className="services">
+                <div className="service1">
+                  <div className="icon">
+                    <img src="https://themesflat.com/wiatechkit/wp-content/uploads/2024/02/Icon-3.png" alt="Robotics" />
                   </div>
+                  <h4>Robotics Software</h4>
+                  <p>We are a dynamic and forward-dedicated revolution</p>
+                </div>
+                <div className="service2">
+                  <div className="icon">
+                    <img src="https://themesflat.com/wiatechkit/wp-content/uploads/2024/03/artificial-intelligence-2.png" alt="AI" />
+                  </div>
+                  <h4>Smart AI & Chatbots</h4>
+                  <p>Passion lies in creating solutions that not only meet but exceed</p>
                 </div>
               </div>
             </div>
           </div>
-        </div>
+        </section>
       </div>
-
       <div className="section6">
         <section className="template-wrapper">
           <div className="carousel-container" >
@@ -1053,7 +981,7 @@ const Home01Slider = () => {
                 <div className="icon-box-inner">
                   <div className="icon">
                     <img
-                      style={{filter: 'brightness(0) saturate(100%) invert(37%) sepia(82%) saturate(1642%) hue-rotate(199deg) brightness(97%) contrast(98%)'}}
+                      style={{ filter: 'brightness(0) saturate(100%) invert(37%) sepia(82%) saturate(1642%) hue-rotate(199deg) brightness(97%) contrast(98%)' }}
                       src="https://themesflat.com/wiatechkit/wp-content/uploads/2024/02/layers-1.png"
                       alt="Software Development"
                       className="icon-img"
@@ -1308,9 +1236,9 @@ const Home01Slider = () => {
           <div className="footer-overlay">
             <div className="footer-content">
               <div className="footer-section logo">
-              <div className="header-logo" style={{ height: 'auto', width: '180px', cursor: 'pointer',marginTop:'-20px' }} onClick={handleScrollToTop}>
-                  <img src={logo} alt="Softchain" style={{ height: '100%', width: '100%', cursor: 'pointer' }} onClick={handleScrollToTop} />       
-              </div>                <p className="footer-description">Sed ut persiciatis unde omnis natus voluptatem accusantium dolore</p>
+                <div className="header-logo" style={{ height: 'auto', width: '180px', cursor: 'pointer', marginTop: '-20px' }} onClick={handleScrollToTop}>
+                  <img src={logo} alt="Softchain" style={{ height: '100%', width: '100%', cursor: 'pointer' }} onClick={handleScrollToTop} />
+                </div>                <p className="footer-description">Sed ut persiciatis unde omnis natus voluptatem accusantium dolore</p>
                 <h3 className="follow-us">Follow Us</h3>
                 <div className="social-media">
                   <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
