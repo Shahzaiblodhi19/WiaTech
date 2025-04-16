@@ -5490,7 +5490,7 @@ html {
 
 .choose-section {
   .why-choose-us {
-    padding: 100px;
+    padding: 0px 100px 100px 100px;
     background-color: #FFF;
   }
   
