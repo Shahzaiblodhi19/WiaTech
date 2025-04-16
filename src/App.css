@@ -781,10 +781,12 @@ html {
     animation: zoomIn 1s ease-in-out;
     transition: all 0.3s ease;
   }
-  .card:hover{
+
+  .card:hover {
     background-image: url('https://themesflat.com/wiatechkit/wp-content/uploads/2024/02/2.png');
     background-color: #086ad8 !important;
   }
+
   .card:hover .card-content {
     color: white !important;
   }
@@ -797,11 +799,13 @@ html {
     color: white !important;
     border-color: white !important;
   }
-  .card.mm:hover .card-icon{
+
+  .card.mm:hover .card-icon {
     filter: invert(0) brightness(100%) contrast(100%) saturate(100%) hue-rotate(0deg) !important;
   }
-  .card:hover .card-icon{
-    filter: invert(1) brightness(10000%) contrast(100%) saturate(0) hue-rotate(180deg) ;
+
+  .card:hover .card-icon {
+    filter: invert(1) brightness(10000%) contrast(100%) saturate(0) hue-rotate(180deg);
   }
 
   .active-card {
@@ -1532,35 +1536,45 @@ html {
     color: white;
   }
 
-  .service-card:hover{
+  .service-card:hover {
     background-color: #086AD8;
     color: white;
   }
-  .service-card.mm:hover .service-image{
+
+  .service-card.mm:hover .service-image {
     filter: invert(0) brightness(100%) contrast(100%) saturate(100%) hue-rotate(0deg) !important;
   }
-  .service-card:hover .service-number{
+
+  .service-card:hover .service-number {
     color: white;
   }
-  .service-card:hover .service-title{
+
+  .service-card:hover .service-title {
     color: white;
   }
+
   .active-service .service-number {
     color: white;
   }
-  .service-card:hover .service-image{
+
+  .service-card:hover .service-image {
     filter: invert(1) brightness(10000%) contrast(100%) saturate(0) hue-rotate(180deg);
   }
-  .service-card:hover p{
+
+  .service-card:hover p {
     color: white;
   }
-  .service-card:hover .arrow-icon{
+
+  .service-card:hover .arrow-icon {
     color: white;
   }
-  .active-service:hover .service-image{
+
+  .active-service:hover .service-image {
     filter: none !important;
 
-  }.active-service .service-title {
+  }
+
+  .active-service .service-title {
     color: white;
   }
 
@@ -3335,17 +3349,21 @@ html {
     text-align: center;
     transition: all 0.3s ease-in-out;
   }
-  .icon-box.mm:hover .icon-img{
+
+  .icon-box.mm:hover .icon-img {
     filter: invert(0) brightness(100%) contrast(100%) saturate(100%) hue-rotate(0deg) !important;
   }
-  .icon-box:hover{
+
+  .icon-box:hover {
     background-color: #086AD8;
     color: white;
   }
-  .icon-box:hover .icon-title{
+
+  .icon-box:hover .icon-title {
     color: white;
   }
-  .icon-box:hover .icon-img{
+
+  .icon-box:hover .icon-img {
     filter: invert(1) brightness(10000%) contrast(100%) saturate(0) hue-rotate(180deg);
   }
 
@@ -3353,10 +3371,12 @@ html {
     background-color: #0072ea !important;
     color: white !important;
   }
-  .active-icon-box .icon-title{
+
+  .active-icon-box .icon-title {
     color: white !important;
   }
-  .active-icon-box .icon-img{
+
+  .active-icon-box .icon-img {
     filter: invert(0) brightness(100%) contrast(100%) saturate(100%) hue-rotate(0deg) !important;
   }
 
@@ -3389,9 +3409,11 @@ html {
     font-weight: bold;
     text-transform: capitalize;
   }
-  .icon-box:hover .tick-icon{
+
+  .icon-box:hover .tick-icon {
     background-color: #d2a98e;
   }
+
   .active-icon-box .tick-icon {
     background-color: #d2a98e;
   }
@@ -4154,6 +4176,10 @@ html {
   .section12 .blog-grid-container {
     grid-template-columns: 1fr;
     padding: 30px 40px 50px 40px;
+  }
+
+  .section8 .slick-prev {
+    right: 150px !important;
   }
 
   .section12 .blogs-header {
@@ -5358,11 +5384,19 @@ html {
   }
 
   .section8 .slick-next {
-    right: 30px !important;
+    right: 20px !important;
   }
 
   .section8 .slick-prev {
-    right: 80px !important;
+    right: 90px !important;
+  }
+  
+  .slider-container .nav.next {
+    right: 20px !important;
+  }
+
+  .slider-container .nav.prev {
+    left: 20px !important;
   }
 
   .section9 {
