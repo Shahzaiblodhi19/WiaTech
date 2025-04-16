@@ -797,11 +797,11 @@ html {
     color: white !important;
     border-color: white !important;
   }
-  .card:hover .card-icon{
-    filter: invert(1) brightness(10000%) contrast(100%) saturate(0) hue-rotate(180deg);
+  .card.mm:hover .card-icon{
+    filter: invert(0) brightness(100%) contrast(100%) saturate(100%) hue-rotate(0deg) !important;
   }
-  .active-card:hover .card-icon{
-    filter: invert(0) brightness(100%) contrast(100%) saturate(100%) hue-rotate(0deg);
+  .card:hover .card-icon{
+    filter: invert(1) brightness(10000%) contrast(100%) saturate(0) hue-rotate(180deg) ;
   }
 
   .active-card {
@@ -1535,6 +1535,9 @@ html {
   .service-card:hover{
     background-color: #086AD8;
     color: white;
+  }
+  .service-card.mm:hover .service-image{
+    filter: invert(0) brightness(100%) contrast(100%) saturate(100%) hue-rotate(0deg) !important;
   }
   .service-card:hover .service-number{
     color: white;
@@ -3331,6 +3334,9 @@ html {
     padding: 20px 15px;
     text-align: center;
     transition: all 0.3s ease-in-out;
+  }
+  .icon-box.mm:hover .icon-img{
+    filter: invert(0) brightness(100%) contrast(100%) saturate(100%) hue-rotate(0deg) !important;
   }
   .icon-box:hover{
     background-color: #086AD8;

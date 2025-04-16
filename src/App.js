@@ -537,9 +537,10 @@ const Home01Slider = () => {
 
           {/* Second Section */}
           <div className="flex-item">
-            <div className="card active-card">
+            <div className="card  mm">
               <div className="card-content">
                 <img
+                style={{filter: 'brightness(0) saturate(100%) invert(37%) sepia(82%) saturate(1642%) hue-rotate(199deg) brightness(97%) contrast(98%)'}}
                   className="card-icon"
                   src="https://themesflat.com/wiatechkit/wp-content/uploads/2024/02/project-management-1.png"
                   alt="Innovative Technology"
@@ -650,11 +651,12 @@ const Home01Slider = () => {
           </div>
 
           <div className="service-cards-container">
-            <div className="service-card active-service">
+            <div className="service-card mm">
               <div className="service-card-inner">
                 <div className="service-icon" style={{ display: 'flex', alignItems: 'start', justifyContent: 'space-between' }}>
                   <span className="service-number">01</span>
                   <img
+                  style={{filter: 'brightness(0) saturate(100%) invert(37%) sepia(82%) saturate(1642%) hue-rotate(199deg) brightness(97%) contrast(98%)'}}
                     src="https://themesflat.com/wiatechkit/wp-content/uploads/2024/02/Icon-1.png"
                     alt="UX/UI Design"
                     className="service-image"
@@ -1047,10 +1049,11 @@ const Home01Slider = () => {
               </div>
 
               {/* Software Development Box */}
-              <div className="icon-box active-icon-box">
+              <div className="icon-box mm">
                 <div className="icon-box-inner">
                   <div className="icon">
                     <img
+                      style={{filter: 'brightness(0) saturate(100%) invert(37%) sepia(82%) saturate(1642%) hue-rotate(199deg) brightness(97%) contrast(98%)'}}
                       src="https://themesflat.com/wiatechkit/wp-content/uploads/2024/02/layers-1.png"
                       alt="Software Development"
                       className="icon-img"
